@@ -1,0 +1,171 @@
+[manifest]
+version = "1.0.0"
+priority = -2
+
+[vars]
+
+#shadowguy chips-mult level up tampering
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''
+G.GAME.hands[hand].level = math.max(0, G.GAME.hands[hand].level + amount)
+G.GAME.hands[hand].mult = math.max(G.GAME.hands[hand].s_mult + G.GAME.hands[hand].l_mult*(G.GAME.hands[hand].level - 1), 1)
+G.GAME.hands[hand].chips = math.max(G.GAME.hands[hand].s_chips + G.GAME.hands[hand].l_chips*(G.GAME.hands[hand].level - 1), 0)
+'''
+position = "at"
+payload = '''
+local shadowguys = SMODS.find_card("j_UTDR_shadowguy")
+if #shadowguys then
+	for i = 1, #shadowguys do
+		shadowguys[i]:juice_up(0.3, 0.4)
+		play_sound(pseudorandom_element({"UTDR_shadowguy_1", "UTDR_shadowguy_2", "UTDR_shadowguy_3"}, shadowguys[i].T.x), 1.0, 0.7)
+		G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + to_big(shadowguys[i].ability.chip_gain)
+		G.GAME.hands[hand].mult = G.GAME.hands[hand].mult + to_big(shadowguys[i].ability.mult_gain)
+	end
+end
+G.GAME.hands[hand].level = math.max(0, G.GAME.hands[hand].level + amount)
+G.GAME.hands[hand].mult = G.GAME.hands[hand].mult + G.GAME.hands[hand].l_mult*amount
+G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + G.GAME.hands[hand].l_chips*amount
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "elseif _c.set == 'Planet' then"
+position = "after"
+payload = '''
+local shadowguys = SMODS.find_card("j_UTDR_shadowguy")
+local shadowguys_chips_factor = 0
+local shadowguys_mult_factor = 0
+if #shadowguys then
+	for i = 1, #shadowguys do
+		shadowguys_chips_factor = shadowguys_chips_factor + to_big(shadowguys[i].ability.chip_gain)
+		shadowguys_mult_factor = shadowguys_mult_factor + to_big(shadowguys[i].ability.mult_gain)
+	end
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.GAME.hands[cfg.hand_type].level,localize(cfg.hand_type, 'poker_hands'), G.GAME.hands[cfg.hand_type].l_mult, G.GAME.hands[cfg.hand_type].l_chips,"
+position = "at"
+payload = "G.GAME.hands[cfg.hand_type].level,localize(cfg.hand_type, 'poker_hands'), G.GAME.hands[cfg.hand_type].l_mult + shadowguys_mult_factor, G.GAME.hands[cfg.hand_type].l_chips + shadowguys_chips_factor,"
+match_indent = true
+
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if obj.get_p_dollars and type(obj.get_p_dollars) == 'function' then
+	ret = ret + obj:get_p_dollars(self)
+elseif self.seal == 'Gold' and not self.ability.extra_enhancement then
+	ret = ret +  3
+end
+'''
+position = "at"
+payload = '''
+local mizzles = SMODS.find_card('j_UTDR_missmizzle')
+if obj.get_p_dollars and type(obj.get_p_dollars) == 'function' then
+	ret = ret + obj:get_p_dollars(self)
+elseif (self.seal == 'Gold' or (#mizzles > 0 and self.seal ~= nil))and not self.ability.extra_enhancement then
+	if self.seal ~= 'Gold' then
+		for i = 1, #mizzles do
+			G.E_MANAGER:add_event(Event({
+				delay = 0.4,
+				func = function() 
+					mizzles[i]:juice_up(0.3, 0.4)
+					return true
+				end
+			}))
+		end
+	end
+	ret = ret +  3
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/game_object.lua"]'''
+pattern = "if G.GAME.used_vouchers.v_omen_globe and pseudorandom('omen_globe') > 0.8 then"
+position = "at"
+payload = '''
+if #SMODS.find_card('j_UTDR_philosopher') > 0 and pseudorandom('philosopher') > 0.75 then
+	_card = {set = "Planet", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "ar3"}
+elseif G.GAME.used_vouchers.v_omen_globe and pseudorandom('omen_globe') > 0.8 then
+'''
+match_indent = true
+
+# thanks to @nightshademagia for this patch
+# disallows rerolling blinds that have been prescribed
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = 'G.GAME.perscribed_bosses[G.GAME.round_resets.ante] = nil'
+position = 'at'
+payload = ''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = 'if not skip_increment then G.GAME.current_round.reroll_cost_increase = G.GAME.current_round.reroll_cost_increase + 1 end'
+position = 'at'
+payload = '''
+if G.GAME.selected_back.name ~= "b_UTDR_forgotten" and not skip_increment then
+	G.GAME.current_round.reroll_cost_increase = G.GAME.current_round.reroll_cost_increase + 1
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = "if center_table.name == 'Reroll Surplus' or center_table.name == 'Reroll Glut' then"
+position = 'at'
+payload = "if (center_table.name == 'Reroll Surplus' or center_table.name == 'Reroll Glut') and G.GAME.selected_back.name ~= 'b_UTDR_forgotten' then"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = "function SMODS.has_enhancement(card, key)"
+position = "after"
+payload = 'if #SMODS.find_card("j_UTDR_shackle") > 0 and ((card.config.center.key == "m_steel" and key == "m_gold") or (card.config.center.key == "m_gold" and key == "m_steel")) then return true end'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "boot_timer('splash prep', 'end',1)"
+position = "after"
+payload = '''
+if SMODS.find_mod('UTDR')[1].config_file.deltarune then
+	self.shared_soul = Sprite(0, 0, self.CARD_W, self.CARD_H, self.ASSET_ATLAS['UTDR_consumables'], { x = 6, y = 5 })
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = 'if self.ability.rental then self.cost = 1 end'
+position = 'after'
+payload = '''
+if G.GAME then if G.GAME.selected_back then if G.GAME.selected_back.name == "b_UTDR_merciful" then
+	if(self.config.center.rarity == 1 or self.config.center.rarity == 2) then
+		self.cost = math.floor(self.cost * 0.25 + 0.5)
+	elseif(self.config.center.rarity == 3 or self.config.center.rarity == 4) then
+		self.cost = math.floor(self.cost * 1.5 + 0.5)
+	end
+end end end
+'''
+match_indent = true
+
+

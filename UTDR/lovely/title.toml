@@ -1,0 +1,60 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+[vars]
+
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = 'replace_card.states.visible = false'
+position = 'before'
+payload = '''
+SMODS.change_base(replace_card, "Hearts", nil)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = '''
+G.SPLASH_LOGO = Sprite(0, 0, 
+        13*SC_scale, 
+        13*SC_scale*(G.ASSET_ATLAS["balatro"].py/G.ASSET_ATLAS["balatro"].px),
+        G.ASSET_ATLAS["balatro"], {x=0,y=0})
+'''
+position = 'at'
+payload = '''
+G.SPLASH_LOGO = Sprite(0, 0,
+		13*SC_scale,
+		13*SC_scale*(G.ASSET_ATLAS["UTDR_splash"].py/G.ASSET_ATLAS["UTDR_splash"].px),
+		G.ASSET_ATLAS["UTDR_splash"], {x=0,y=0})
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_joker'])"
+position = "at"
+payload = '''
+if math.fmod(os.time(), 8192) == 0 then
+	SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_joker'])
+else
+	local config = SMODS.find_mod('UTDR')[1].config_file
+	local tv_world = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_UTDR_tv_world_title'])
+	local sans = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_UTDR_sans_title'])
+	if config.deltarune and not config.undertale then
+		SC = tv_world
+	elseif config.undertale and not config.deltarune then
+		SC = sans
+	else
+		if math.fmod(os.time(), 2) == 0 then
+			SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_UTDR_tv_world_title'])
+		else
+			SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_UTDR_sans_title'])
+		end
+	end
+end
+'''
+match_indent = true
