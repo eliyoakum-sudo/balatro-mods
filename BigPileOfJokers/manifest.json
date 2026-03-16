@@ -1,0 +1,11 @@
+{
+    "name": "Big Pile of Jokers",
+    "id": "BigPileOfJokers",
+    "author": ["Wes"],
+    "description": "Adds a big pile of themed jokers with unique abilities",
+    "version": "1.0.0",
+    "version_number": "1.0.0",
+    "prefix": "bpj",
+    "main_file": "main.lua",
+    "dependencies": ["Steamodded"]
+}
