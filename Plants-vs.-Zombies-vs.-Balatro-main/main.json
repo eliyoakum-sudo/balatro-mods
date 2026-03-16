@@ -1,0 +1,12 @@
+{
+	"id": "pvzvb",
+	"name": "Plants vs. Zombies",
+	"display_name": "PvZ",
+	"author": ["V--R"],
+	"description": "Mod adding in Plants vs. Zombies content.",
+	"prefix": "pvz",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "aedd25",
+	"version": "0.7.0",
+}
