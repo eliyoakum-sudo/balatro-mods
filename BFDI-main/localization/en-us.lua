@@ -1,0 +1,866 @@
+return {
+    descriptions = {
+        Back = {
+            b_bfdi_goiky = {
+                name = 'Goiky Deck',
+                text = {
+                    "After defeating each",
+                    "{C:attention}Boss Blind{}, gain a",
+                    "{C:dark_edition}Negative{} copy of",
+                    "{C:tarot}The Chariot{}"
+                }
+            },
+            b_bfdi_yoyle = {
+                name = 'Yoyle Deck',
+                text = {
+                    "Start with an {C:eternal}Eternal{}",
+                    "{C:attention}Contestant{} Joker,",
+                    "{C:attention}+#1#{} Joker slot"
+                }
+            }
+        },
+        Joker = {
+            j_bfdi_blocky               = {
+                name = 'Blocky',
+                text = {
+                    "All played {C:attention}2s{}-{C:attention}5s{} become",
+                    "{C:attention}Glass{} cards when scored",
+                    "Destroys all played and",
+                    "scored {C:attention}Glass{} cards"
+                }
+            },
+            j_bfdi_bubble               = {
+                name = 'Bubble',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult",
+                    "for {C:attention}#2#{} round#3#"
+                }
+            },
+            j_bfdi_coiny                = {
+                name = 'Coiny',
+                text = {
+                    "Gives {C:attention}$#1#{} when a",
+                    "{C:attention}playing card{}",
+                    "is destroyed"
+                }
+            },
+            j_bfdi_david                = {
+                name = 'David',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "{C:green}#1# in #2#{} chance to",
+                    "gain {C:white,X:mult}X#3#{} Mult",
+                    "{C:inactive}(Currently {C:white,X:mult}X#4#{C:inactive} Mult)"
+                }
+            },
+            j_bfdi_eraser               = {
+                name = 'Eraser',
+                text = {
+                    "Gains {C:white,X:mult}X#1#{} Mult for",
+                    "each destroyed {C:diamonds}Diamond{}",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_firey                = {
+                name = 'Firey',
+                text = {
+                    "If first hand of round",
+                    "is exactly {C:attention}1{} card, and it",
+                    "is a {C:attention}face{} card, destroys",
+                    "it and creates a {C:attention}Wild Ace{}"
+                }
+            },
+            j_bfdi_flower               = {
+                name = 'Flower',
+                text = {
+                    "{C:attention}Queens{} held in hand",
+                    "or played and scored",
+                    "give {C:chips}+#1#{} Chips"
+                }
+            },
+            j_bfdi_golfball             = {
+                name = 'Golf Ball',
+                text = {
+                    "Played {C:attention}Steel{} cards",
+                    "give {C:white,X:mult}X#1#{} Mult",
+                    "when scored"
+                }
+            },
+            j_bfdi_icecube              = {
+                name = 'Ice Cube',
+                text = {
+                    "On {C:attention}final hand{} of",
+                    "round, creates a",
+                    "{C:spectral}Spectral{} card",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            j_bfdi_leafy                = {
+                name = 'Leafy',
+                text = {
+                    "Earn {C:money}$#1#{} for each",
+                    "{C:blue}hand{} remaining",
+                    "at the end of",
+                    "the {C:attention}round{}"
+                }
+            },
+            j_bfdi_match                = {
+                name = 'Match',
+                text = {
+                    "Gains {C:mult}+#1#{} Mult for",
+                    "each played and",
+                    "scored {C:attention}Wild{} card",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_needle               = {
+                name = 'Needle',
+                text = {
+                    "{C:blue}+#1#{} hand if played hand",
+                    "contains an {C:attention}unscoring Ace{}",
+                    "{C:inactive}({C:attention}#2#{C:inactive} [#3#] uses each round){}"
+                }
+            },
+            j_bfdi_pen                  = {
+                name = 'Pen',
+                text = {
+                    "When hand is played,",
+                    "lose {C:money}$#1#{},",
+                    "gains {C:mult}+#2#{} Mult",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_pencil               = {
+                name = 'Pencil',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "add a random {C:attention}Wild{}",
+                    "{C:attention}playing card{} to",
+                    "your hand"
+                }
+            },
+            j_bfdi_pin                  = {
+                name = 'Pin',
+                text = {
+                    "Each {C:spades}Spade{} held in",
+                    "hand gives {C:mult}+#1#{} Mult,",
+                    "each {C:attention}Ace{} held in",
+                    "hand gives {C:white,X:mult}X#2#{} Mult"
+                }
+            },
+            j_bfdi_rocky                = {
+                name = 'Rocky',
+                text = {
+                    "All played {C:attention}face{} cards",
+                    "become {C:attention}Lucky{} cards",
+                    "when scored"
+                }
+            },
+            j_bfdi_snowball             = {
+                name = 'Snowball',
+                text = {
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:attention}enhanced{} card in",
+                    "your full deck",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_spongy               = {
+                name = 'Spongy',
+                text = {
+                    "{C:mult}+#1#{} Mult for each",
+                    "card above {C:attention}#2#{}",
+                    "in your full deck",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_teardrop             = {
+                name = 'Teardrop',
+                text = {
+                    "{C:chips}+#3#{} Chips? {C:mult}+#1#{} Mult?",
+                    "{C:white,X:mult}X#2#{} Mult? {C:money}+$#4#{}?",
+                    "{C:inactive}({C:green}#5# in #6#{C:inactive} chance each)"
+                }
+            },
+            j_bfdi_tennisball           = {
+                name = 'Tennis Ball',
+                text = {
+                    "Each played card that",
+                    "{C:attention}doesn't score{} has a {C:green}#1# in #2#{}",
+                    "chance to become {C:attention}Steel{}"
+                }
+            },
+            j_bfdi_woody                = {
+                name = 'Woody',
+                text = {
+                    "Gains {C:chips}+#1#{} Chips for each",
+                    "{C:attention}Stone{} card discarded",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips){}"
+                }
+            },
+            j_bfdi_bomby                = {
+                name = 'Bomby',
+                text = {
+                    "If played hand is a",
+                    "{C:attention}High Card{}, destroys all",
+                    "cards held in hand",
+                    "{C:red,E:2}self destructs{}"
+                }
+            },
+            j_bfdi_book                 = {
+                name = 'Book',
+                text = {
+                    "Gains {C:chips}+#1#{} Chips when",
+                    "each played {C:attention}#2#{} is scored,",
+                    "rank changes every round",
+                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips){}"
+                }
+            },
+            j_bfdi_donut                = {
+                name = 'Donut',
+                text = {
+                    "At the end of the round,",
+                    "gains {C:mult}+#1#{} Mult for each",
+                    "{C:attention}seal{} held in hand",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_dora                 = {
+                name = 'Dora',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "{C:red}destroys{} 1 {C:planet}Planet{} card",
+                    "and gains {C:white,X:mult}X#1#{} Mult",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_fries                = {
+                name = 'Fries',
+                text = {
+                    "Creates a copy of {C:planet}#1#{} at",
+                    "the end of the round, {C:planet}Planet{}",
+                    "card changes every {C:red}discard{}",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            j_bfdi_gelatin              = {
+                name = 'Gelatin',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult for",
+                    "each played hand",
+                    "except the {C:attention}first{}"
+                }
+            },
+            j_bfdi_nickel               = {
+                name = 'Nickel',
+                text = {
+                    "Gives {C:attention}$#1#{} when a",
+                    "{C:attention}playing card{} is",
+                    "added to your deck"
+                }
+            },
+            j_bfdi_puffball             = {
+                name = 'Puffball',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult if",
+                    "a {C:attention}Wild{} card",
+                    "is held in hand"
+                }
+            },
+            j_bfdi_ruby                 = {
+                name = 'Ruby',
+                text = {
+                    "Each played {C:diamonds}Diamond{}",
+                    "card has a {C:green}#1# in #2#{}",
+                    "chance to become",
+                    "{C:attention}Glass{} when scored"
+                }
+            },
+            j_bfdi_yellowface           = {
+                name = 'Yellow Face',
+                text = {
+                    "Gives {C:money}$#1#{} when a",
+                    "consumable is sold"
+                }
+            },
+            j_bfdi_eightball            = {
+                name = '8-Ball',
+                text = {
+                    "Each hand, gives",
+                    "{C:white,X:mult}X#1#{} Mult for each",
+                    "played and scored {C:attention}8{}"
+                }
+            },
+            j_bfdi_balloony             = {
+                name = 'Balloony',
+                text = {
+                    "At the end of the {C:attention}round{},",
+                    "creates a {C:planet}Planet{} card",
+                    "for each unused {C:red}discard{}",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            j_bfdi_barfbag              = {
+                name = 'Barf Bag',
+                text = {
+                    "Creates a {C:tarot}Tarot{} card",
+                    "if all played cards",
+                    "are {C:attention}Lucky{} cards",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            j_bfdi_basketball           = {
+                name = 'Basketball',
+                text = {
+                    "Retriggers all",
+                    "played and scored",
+                    "{C:attention}Steel{} cards"
+                }
+            },
+            j_bfdi_bell                 = {
+                name = 'Bell',
+                text = {
+                    "Gains {C:white,X:mult}X#3#{} Mult if",
+                    "{C:attention}#1#{} {C:inactive}[#2#]{} {C:attention}Straights{} are",
+                    "played in a round",
+                    "{C:inactive}(Currently {C:white,X:mult}X#4#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_blackhole            = {
+                name = 'Black Hole',
+                text = {
+                    "{C:attention}+#1#{} to all",
+                    "hand levels"
+                }
+            },
+            j_bfdi_bottle               = {
+                name = 'Bottle',
+                text = {
+                    "Played {C:attention}Glass{} cards",
+                    "give an extra",
+                    "{C:white,X:mult}X#1#{} Mult when scored"
+                }
+            },
+            j_bfdi_bracelety            = {
+                name = 'Bracelety',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult if played hand",
+                    "has any {C:attention}#2#s{}, rank",
+                    "changes each round"
+                }
+            },
+            j_bfdi_cake                 = {
+                name = 'Cake',
+                text = {
+                    "When your {C:attention}third{}",
+                    "hand is played,",
+                    "{C:attention}upgrades{} it by",
+                    "{C:attention}1{} level"
+                }
+            },
+            j_bfdi_clock                = {
+                name = 'Clock',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult after",
+                    "{C:attention}#2#{} Antes",
+                    "{C:inactive}(Currently #3#){}"
+                }
+            },
+            j_bfdi_cloudy               = {
+                name = 'Cloudy',
+                text = {
+                    "Gains {C:white,X:mult}X#1#{} Mult when hand",
+                    "is played if all cards",
+                    "held in hand are {C:attention}enhanced{}",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_bfdi_eggy                 = {
+                name = 'Eggy',
+                text = {
+                    "At the end of",
+                    "the round, {C:attention}rounds{}",
+                    "your {C:money}money{} up to",
+                    "the nearest {C:money}$#1#{}",
+                    "{C:inactive}(Will round to {C:money}$#2#{C:inactive}){}"
+                }
+            },
+            j_bfdi_fanny                = {
+                name = 'Fanny',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult if played hand",
+                    "has no {C:attention}#2#s{}, rank",
+                    "changes each round"
+                }
+            },
+            j_bfdi_fireyjr              = {
+                name = 'Firey Jr.',
+                text = {
+                    "If played hand contains",
+                    "a scoring {C:attention}Ace{}, {C:red}destroys{}",
+                    "the {C:attention}lowest{} ranked card",
+                    "held in hand"
+                }
+            },
+            j_bfdi_foldy                = {
+                name = 'Foldy',
+                text = {
+                    "Gains {C:mult}+#1#{} Mult",
+                    "every {C:attention}#2#{} {C:inactive}[#3#]{} played",
+                    "and scored cards",
+                    "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_gaty                 = {
+                name = 'Gaty',
+                text = {
+                    "On {C:attention}final hand{} of",
+                    "round, adds {C:dark_edition}Polychrome{}",
+                    "to the {C:attention}first{} scored card"
+                }
+            },
+            j_bfdi_grassy               = {
+                name = 'Grassy',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult for each",
+                    "level in {C:attention}Full House{}",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_lightning            = {
+                name = 'Lightning',
+                text = {
+                    "Discarding a {C:attention}single{}",
+                    "card will {C:red}destroy{}",
+                    "it if a {C:attention}Gold{} card",
+                    "is held in hand"
+                }
+            },
+            j_bfdi_liy                  = {
+                name = 'Liy',
+                text = {
+                    "{C:money}Sell{} a consumable for",
+                    "{C:white,X:mult}X#1#{} Mult next hand",
+                    "{C:inactive}(Currently #2#){}"
+                }
+            },
+            j_bfdi_lollipop             = {
+                name = 'Lollipop',
+                text = {
+                    "Gains {C:mult}+#1#{} Mult when",
+                    "selling a {C:attention}consumable{}",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_loser                = {
+                name = 'Loser',
+                text = {
+                    "Round only {C:attention}ends{} after",
+                    "{C:attention}final hand{} of round"
+                }
+            },
+            j_bfdi_marker               = {
+                name = 'Marker',
+                text = {
+                    "After first {C:green}reroll{},",
+                    "creates a {C:tarot}Tarot{} card",
+                    "After second {C:green}reroll{},",
+                    "creates a {C:planet}Planet{} card",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            j_bfdi_naily                = {
+                name = 'Naily',
+                text = {
+                    "If first hand of",
+                    "round is a single",
+                    "card, gives it a",
+                    "{C:attention}Naily{} Seal"
+                }
+            },
+            j_bfdi_pie                  = {
+                name = 'Pie',
+                text = {
+                    "Cards with {C:attention}seals{}",
+                    "give {C:white,X:mult}X#1#{} Mult",
+                    "when scored"
+                }
+            },
+            j_bfdi_pillow               = {
+                name = 'Pillow',
+                text = {
+                    "During a round, sell",
+                    "a {C:blue}Common{} Joker to",
+                    "create a {C:attention}Contestant Tag{}"
+                }
+            },
+            j_bfdi_remote               = {
+                name = 'Remote',
+                text = {
+                    "Cards with {C:attention}even{}",
+                    "rank permanently",
+                    "gain {C:chips}+#1#{} Chips",
+                    "when {C:red}discarded{}"
+                }
+            },
+            j_bfdi_robotflower          = {
+                name = 'Robot Flower',
+                text = {
+                    "{C:attention}Steel cards{} held in hand",
+                    "or played and scored",
+                    "give {C:chips}+#1#{} Chips"
+                }
+            },
+            j_bfdi_roboty               = {
+                name = 'Roboty',
+                text = {
+                    "Gains {C:mult}+#1#{} Mult when",
+                    "each played {C:attention}10{} is scored",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_saw                  = {
+                name = 'Saw',
+                text = {
+                    "If played hand",
+                    "contains an {C:attention}8{},",
+                    "{C:red}destroys{} the {C:attention}rightmost{}",
+                    "played and scored card"
+                }
+            },
+            j_bfdi_stapy                = {
+                name = 'Stapy',
+                text = {
+                    "{C:attention}High Cards{} count as",
+                    "{C:attention}Pairs{}, {C:attention}Three of a Kinds{}",
+                    "count as {C:attention}Four of a Kinds{}"
+                }
+            },
+            j_bfdi_taco                 = {
+                name = 'Taco',
+                text = {
+                    "After {C:red}discarding{}, gains",
+                    "{C:mult}+#1#{} Mult if your hand",
+                    "contains at least {C:attention}#3# suits{}",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_tree                 = {
+                name = 'Tree',
+                text = {
+                    "Gains {C:chips}+#1#{} Chips for",
+                    "each unused {C:red}discard{} at",
+                    "the end of the {C:attention}round{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips){}"
+                }
+            },
+            j_bfdi_tv                   = {
+                name = 'TV',
+                text = {
+                    "Other {C:attention}Contestant{}",
+                    "Jokers each give",
+                    "{C:white,X:mult}X#1#{} Mult"
+                }
+            },
+            j_bfdi_pricetag             = {
+                name = 'Price Tag',
+                text = {
+                    "When {C:attention}Boss Blind{} is",
+                    "defeated, creates a",
+                    "{C:attention}Voucher{} Tag"
+                }
+            },
+            j_bfdi_winner               = {
+                name = 'Winner',
+                text = {
+                    "Gains {C:white,X:mult}X#1#{} Mult",
+                    "when playing {C:attention}final{}",
+                    "{C:attention}hand{} of round",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_beachball            = {
+                name = 'Beach Ball',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult,",
+                    "{C:red,E:2}self destructs{} if",
+                    "scoring hand contains",
+                    "a {C:attention}non-Wild{} {C:spades}Spade{}"
+                }
+            },
+            j_bfdi_fern                 = {
+                name = 'Fern',
+                text = {
+                    "Earn {C:money}$#1#{} at the end",
+                    "of the {C:attention}round{} if",
+                    "exactly {C:blue}#2#{} hand and",
+                    "{C:red}#3#{} discard were used"
+                }
+            },
+            j_bfdi_hotdog               = {
+                name = 'Hot Dog',
+                text = {
+                    "During any {C:attention}Boss Blind{},",
+                    "gains {C:white,X:mult}X#1#{} Mult if a",
+                    "single card is {C:red}discarded{}",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult){}"
+                }
+            },
+            j_bfdi_jammy                = {
+                name = 'Jammy',
+                text = {
+                    "All cards added",
+                    "to your deck",
+                    "become {C:attention}Glass{}"
+                }
+            },
+            j_bfdi_money                = {
+                name = 'Money',
+                text = {
+                    "If played hand has",
+                    "{C:attention}#1#{} scoring cards,",
+                    "each earns {C:money}$#2#{}",
+                    "when scored"
+                }
+            },
+            j_bfdi_needy                = {
+                name = 'Needy',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "gain {C:blue}+#1#{} hand for",
+                    "each held {C:tarot}Tarot{} card",
+                    "{C:inactive}(Max of {C:blue}+#2#{C:inactive} hands){}"
+                }
+            },
+            j_bfdi_rose                 = {
+                name = 'Rose',
+                text = {
+                    "Retriggers all played",
+                    "and scored cards",
+                    "if {C:red}no discards{} were",
+                    "used this round"
+                }
+            },
+            j_bfdi_ruler                = {
+                name = 'Ruler',
+                text = {
+                    "If played hand contains",
+                    "a {C:attention}Straight{}, all other",
+                    "{C:attention}Contestant{} Jokers",
+                    "give {C:mult}+#1#{} Mult"
+                }
+            },
+            j_bfdi_sidewalky            = {
+                name = 'Sidewalky',
+                text = {
+                    "Gives {X:mult,C:white}X#1#{} Mult",
+                    "for each {C:attention}Stone Card{}",
+                    "in your {C:attention}full deck{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
+                }
+            },
+            j_bfdi_sticker              = {
+                name = 'Sticker',
+                text = {
+                    "When {C:attention}round{} begins,",
+                    "adds a {C:attention}Sticker Sticker{} to",
+                    "one random card in",
+                    "your hand without one"
+                }
+            },
+            j_bfdi_toothpaste           = {
+                name = 'Toothpaste',
+                text = {
+                    "Gains {C:chips}+#1#{} Chips for",
+                    "each destroyed card",
+                    "with {C:attention}no enhancement{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips){}"
+                }
+            },
+            j_bfdi_yoylecake            = {
+                name = 'Yoylecake',
+                text = {
+                    "The next {C:attention}#1#{} played",
+                    "card#2# become#3# {C:attention}Steel{}",
+                    "when scored"
+                }
+            },
+            j_bfdi_scoreboard           = {
+                name = 'Scoreboard',
+                text = {
+                    "Played {C:attention}2s{}-{C:attention}5s{}",
+                    "give {C:chips}+#1#{} Chips",
+                    "when scored"
+                }
+            },
+            j_bfdi_redball              = {
+                name = 'Red Ball',
+                text = {
+                    "Sell this Joker",
+                    "to earn {C:money}$#1#{}"
+                }
+            },
+            j_bfdi_maroonball           = {
+                name = 'Maroon Ball',
+                text = {
+                    "This is {C:red}not{}",
+                    "a red ball,",
+                    "no {C:attention}ability{} and",
+                    "no {C:money}sell value{}"
+                }
+            },
+            j_bfdi_unknownball          = {
+                name = 'Red Ball?',
+                text = {
+                    "Sell this Joker",
+                    "to earn {C:attention}$#1#{}"
+                }
+            },
+            j_bfdi_bagofboogers         = {
+                name = 'Bag of Boogers',
+                text = {
+                    "Played {C:attention}Lucky{} cards give",
+                    "{C:mult}+#1#{} Mult when scored"
+                }
+            },
+            j_bfdi_bubblerecoverycenter = {
+                name = 'Bubble Recovery Center',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "creates a copy of {C:attention}Bubble{}",
+                    "if you don't have one"
+                }
+            },
+            j_bfdi_magicaldieofjudgment = {
+                name = 'Magical Die of Judgment',
+                text = {
+                    "Creates a {C:attention}D6{} Tag",
+                    "at the end of the {C:attention}shop{}",
+                    "if you didn't {C:green}reroll{}"
+                }
+            },
+            j_bfdi_yoylite              = {
+                name = 'Yoylite',
+                text = {
+                    "After {C:attention}#2#{} Antes, sell",
+                    "this card to go",
+                    "back {C:attention}#3#{} Ante",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}/#2#){}"
+                }
+            },
+            j_bfdi_profily              = {
+                name = 'Profily',
+                text = {
+                    "{C:white,X:mult}X#1#{} Mult if Jokers",
+                    "to the left and",
+                    "right are both",
+                    "{C:attention}Contestant{} Jokers"
+                }
+            },
+            j_bfdi_speakerbox           = {
+                name = 'Announcer',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroys 1 {C:attention}Contestant{} Joker",
+                    "and gains {C:white,X:mult}X#1#{} Mult",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_bfdi_one                  = {
+                name = 'One',
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "creates a copy of {C:spectral}Trance{}",
+                    "{C:inactive}(Must have room){}",
+                    "Each {C:planet}Blue{} seal held",
+                    "in hand gives {C:white,X:mult}X#1#{} Mult"
+                }
+            },
+            j_bfdi_two                  = {
+                name = 'Two',
+                text = {
+                    "Gains {C:white,X:mult}X#1#{} Mult if",
+                    "played hand is a",
+                    "{C:attention}Two Pair{}",
+                    "{C:inactive}(Currently {C:white,X:mult}X#2#{C:inactive}} Mult){}"
+                }
+            },
+            j_bfdi_three                = {
+                name = 'Three',
+                text = {
+                    "Played cards change",
+                    "{C:attention}rank{} if {C:attention}unscored{}"
+                }
+            },
+            j_bfdi_four                 = {
+                name = 'Four',
+                text = {
+                    "{C:blue}+#1#{} hand size,",
+                    "{C:blue}+#2#{} hands"
+                }
+            },
+            j_bfdi_x                    = {
+                name = 'X',
+                text = {
+                    "Played {C:attention}X{}s give",
+                    "{C:white,X:mult}X#1#{} Mult when scored,",
+                    "{C:attention}X{} is a secret",
+                    "unchanging {C:attention}rank{}"
+                }
+            },
+        },
+        Tag = {
+            tag_bfdi_contestant = {
+                name = "Contestant Tag",
+                text = {
+                    "Shop has a free",
+                    "{C:green}Contestant Joker{}",
+                },
+            }
+        },
+        Other = {
+            bfdi_stickersticker = {
+                name = "Sticker",
+                text = {
+                    "Earn {C:money}$1{} when this",
+                    "card is played",
+                    "and scores"
+                }
+            },
+            contestant_joker = {
+                name = 'Contestant Joker',
+                text = {
+                    "A Joker depicting a",
+                    "character who competed in",
+                    "{C:bfdi_green}BF{C:blue}DI{}, {C:money}BF{C:attention}DI{C:inactive}A{}, {C:blue}BFB{},",
+                    "{C:green}TPoT{}, {C:bfdie_orange}BF{C:bfdie_lime}DI{C:bfdie_orange}E{}",
+                    "or other {C:attention}object shows{}"
+                }
+            }
+        }
+    },
+    misc = {
+        dictionary = {
+            contestant_joker_badge = "Contestant",
+            created_polychrome = "Polychrome",
+            created_voucher_tag = "+Voucher Tag",
+            created_d6_tag = "+D6 Tag",
+            created_contestant_tag = "+Contestant Tag",
+            bfdi_active = "active",
+            bfdi_inactive = "inactive"
+        },
+        labels = {
+            bfdi_naily_seal = "Naily Seal",
+            bfdi_stickersticker = "Sticker"
+        },
+        v_dictionary = {
+            bfdi_i_hate = "I HATE #1#s!",
+            bfdi_i_love = "I LOVE #1#s!",
+            s_ante = "-#1# Ante",
+            s_antes = "-#1# Antes",
+            a_planet = "+#1# Planet",
+            a_planets = "+#1# Planets",
+            a_hand = "+#1# Hand"
+        }
+    }
+}
