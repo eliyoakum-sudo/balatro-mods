@@ -1,0 +1,65 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+pattern = '''
+if skip and (wrap or not SMODS.Ranks[v].straight_edge) then
+    for _,w in ipairs(SMODS.Ranks[v].next) do
+        ret[#ret+1] = w
+    end
+end
+'''
+position = "at"
+payload = '''
+if skip == 'emmie' then
+    local s = 2
+    local function get_next_ranks(rank, s, ret)
+        if s > 0 and (wrap or not SMODS.Ranks[rank].straight_edge) then
+            for _,w in ipairs(SMODS.Ranks[rank].next) do
+                ret[#ret+1] = w
+                get_next_ranks(w, s - 1, ret)
+            end
+        end
+    end
+    get_next_ranks(v, s, ret)
+elseif skip == 'emmieold' then
+    local s = 2
+    if next(get_flush(hand)) then
+        local function get_next_ranks(rank, s, ret)
+            if s > 0 and (wrap or not SMODS.Ranks[rank].straight_edge) then
+                for _,w in ipairs(SMODS.Ranks[rank].next) do
+                    ret[#ret+1] = w
+                    get_next_ranks(w, s - 1, ret)
+                end
+            end
+        end
+        get_next_ranks(v, s, ret)
+    end
+elseif skip and (wrap or not SMODS.Ranks[v].straight_edge) then
+    for _,w in ipairs(SMODS.Ranks[v].next) do
+        ret[#ret+1] = w
+    end
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "G.STATE = G.STATES.NEW_ROUND"
+position = "at"
+payload = '''
+if 
+    ((#SMODS.find_card('j_grasslanders_tickini') > 0) and 
+    G.GAME.current_round.hands_left >= 1 and #G.deck.cards > 0)
+then
+    G.STATE = G.STATES.DRAW_TO_HAND
+else
+    G.STATE = G.STATES.NEW_ROUND
+end
+'''
+match_indent = true
