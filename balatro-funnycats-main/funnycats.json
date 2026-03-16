@@ -1,0 +1,19 @@
+{
+	"id": "funnycats",
+	"name": "funnycats",
+	"display_name": "Funny Cats",
+	"author": ["mbx8_rt"],
+	"description": "MEOW! MRRP MRRP MEOW! FUNNY CATS! (credits to elial1 for the custom joker template, credits to astro, superbread and alatr for helping with art for the mod)",
+	"prefix": "funnycats",
+	"main_file": "funnycats.lua",
+	"priority": 0,
+	"badge_colour": "8352AB",
+	"badge_text_colour": "FFFFFF",
+	"version": "1.0.1",
+	"dependencies": [
+		"Steamodded (>=1.0.0~BETA-0614a)",
+    	"Lovely (>=0.6)"
+	],
+  	"conflicts": [],
+	"provides": []
+}
