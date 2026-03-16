@@ -1,0 +1,17 @@
+{
+  "id": "test",
+  "name": "404 test",
+  "author": [
+    "Eli Yoakum"
+  ],
+  "description": "ERROR CODE: 404 \nsearching...\nsearching...\nversion: v.00BETA found\nlaunching...",
+  "prefix": "test",
+  "main_file": "main.lua",
+  "version": "1.0.0",
+  "priority": 0,
+  "badge_colour": "666665",
+  "badge_text_colour": "FFFFFF",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0827c)"
+  ]
+}
