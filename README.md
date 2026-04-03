@@ -14,7 +14,7 @@ create  folder named mods there > put the smods folder into the mods folder
 
 once you have done step 1 (LÖVELY injector setup) and step 2 (Steam modded setup) boot up balatro when you do you should see a mods button in the main menu
 
-to add mods all you need to do is put the mods folder into your mods folder like done with smods
+to add mods all you need to do is put the mod's folder into your mods folder (like done with smods)
 
 **ESSENTIALS**
 DebugPlus — WilsontheWolf — https://github.com/WilsontheWolf/DebugPlus  
