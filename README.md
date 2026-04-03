@@ -24,14 +24,14 @@ appdata/roaming/balatro/
       mod2
       ect...
 
-      <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/f4c8c6c7-4043-4c7c-b4d5-e035dbbc5b24" />
+    
 
 
 **FOLDER STRUCTURE (LÖVELY)**
 steamapps/common/balatro/
      version.dll
 
-     <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/7f846be7-f0c0-470e-8398-fefcbd031ac0" />
+
 
 
 
