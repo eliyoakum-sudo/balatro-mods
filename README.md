@@ -33,7 +33,7 @@ Marshii Mod — MarshiiRose — https://github.com/MarshiiRose/Marshii
 Prism — Blazingulag — https://github.com/Blazingulag/Prism  
 SparkLatro — BestSpark687090 — https://github.com/BestSpark687090/SparkLatro  
 Aikoyori’s Shenanigans — Aikoyori — https://github.com/Aikoyori/Balatro-Aikoyoris-Shenanigans  
-funnycats — mbx8_rt — https://github.com/mbx8-rt/balatro-funnycats  
+funnycats — mbx8_rt — https://github.com/mbx8rt/balatro-funnycats
 Sixfold — sixtydegrees, Fred — https://github.com/sixtydegrees/sixfold-mod  
 Tesseract — hyperx — https://github.com/hyperx/Tesseract  
 ExtraCredit — CampfireCollective — https://github.com/CampfireCollective/ExtraCredit  
