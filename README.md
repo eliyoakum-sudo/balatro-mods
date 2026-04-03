@@ -28,6 +28,7 @@ Malverk — Eremel — https://github.com/Eremel/Malverk
 Card Sleeves — Larswijn — https://github.com/Larswijn/CardSleeves  
 Battle for Jimbo — WusGud, Nitro — https://github.com/WusGud/Battle-For-Jimbo  
 Dealer’s Choice — NOX, mysteryAftermath — https://github.com/mysteryAftermath/dealers-choice 
+
 Dream BBQ — Noodlemire — https://github.com/Noodlemire/Balatro-Dream-BBQ-Mod  
 Grasslander Balatro — Slimester, Eventlesstew — https://github.com/Slimester/Grasslander-Balatro  
 Marshii Mod — MarshiiRose — https://github.com/MarshiiRose/Marshii-Mod  
