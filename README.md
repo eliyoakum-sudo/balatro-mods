@@ -36,7 +36,7 @@ Aikoyori’s Shenanigans — Aikoyori — https://github.com/Aikoyori/Balatro-Ai
 funnycats — mbx8_rt — https://github.com/mbx8rt/balatro-funnycats                                                                                                                         
 Sixfold — sixtydegrees, Fred — https://github.com/scl-66/sixfold-mod                                                                                                                      
 Tesseract — hyperx — https://github.com/RainDance2871/Tesseract                                                                                                                           
-ExtraCredit — CampfireCollective — https://github.com/GuilloryCraft/ExtraCredit
-BFDI — GhostSalt — https://github.com/GhostSalt/BFDI  
+ExtraCredit — CampfireCollective — https://github.com/GuilloryCraft/ExtraCredit                                                                                                           
+BFDI — GhostSalt — https://github.com/GhostSalt/BFDI                                                                                                                                      
 Scar’s Silly Stuff — ScarredOut — https://github.com/ScarredOut/ScarsSillyStuff  
 BundlesOfFun — GeorgeTheRat — https://github.com/GeorgeTheRat/BundlesOfFun
