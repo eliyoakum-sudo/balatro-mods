@@ -20,7 +20,6 @@ to add mods all you need to do is put the mod's folder into your mods folder (li
 DebugPlus — WilsontheWolf — https://github.com/WilsontheWolf/DebugPlus  
 Talisman — jenwalter666, cg — https://github.com/jenwalter666/Talisman  
 Lua Patcher — Piengineer12 — https://github.com/Piengineer12/lua_patcher  
-More Speed — Steamo — https://github.com/Steamopolly/MoreSpeed  
 Malverk — Eremel — https://github.com/Eremel/Malverk
 
 
