@@ -40,3 +40,9 @@ ExtraCredit — CampfireCollective — https://github.com/GuilloryCraft/ExtraCre
 BFDI — GhostSalt — https://github.com/GhostSalt/BFDI                                                                                                                                      
 Scar’s Silly Stuff — ScarredOut — https://github.com/ScarredOut/ScarsSillyStuff  
 BundlesOfFun — GeorgeTheRat — https://github.com/GeorgeTheRat/BundlesOfFun
+
+**RESOURCES**
+- github
+- discord
+- balatro wiki https://balatrowiki.org/
+
