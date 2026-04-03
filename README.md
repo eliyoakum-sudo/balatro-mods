@@ -16,6 +16,26 @@ once you have done step 1 (LÖVELY injector setup) and step 2 (Steam modded setu
 
 to add mods all you need to do is put the mod's folder into your mods folder (like done with smods)
 
+**FOLDER STRUCTURE (mods)**
+appdata/roaming/balatro/
+       mods/
+      smods
+      mod1
+      mod2
+      ect...
+
+      <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/f4c8c6c7-4043-4c7c-b4d5-e035dbbc5b24" />
+
+
+**FOLDER STRUCTURE (LÖVELY)**
+steamapps/common/balatro/
+     version.dll
+
+     <img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/7f846be7-f0c0-470e-8398-fefcbd031ac0" />
+
+
+
+
 **ESSENTIALS**
 DebugPlus — WilsontheWolf — https://github.com/WilsontheWolf/DebugPlus  
 Talisman — jenwalter666, cg — https://github.com/SpectralPack/Talisman  
